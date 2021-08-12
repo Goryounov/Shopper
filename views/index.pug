@@ -1,0 +1,10 @@
+include header
+    include site_header
+include slider
+div(class='album bg-light')
+    div(class='container py-3')
+        h2.py-3 Все товары
+        div(class='row')
+            each val, index in goods
+                include card
+include footer
