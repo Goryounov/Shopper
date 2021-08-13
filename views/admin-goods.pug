@@ -1,0 +1,27 @@
+include head
+
+div(class='wrap')
+div(class='content')
+    header(class='site-header')
+        include header_order
+
+    div(class="container text-center")
+        h3.py-3 Управление
+        div(class="d-grid gap-2 mb-5")
+            a(href="/admin" class="btn btn-primary site-btn mx-1") Ваши данные
+            a(href="/admin/orders" class="btn btn-primary site-btn mx-1") Заказы
+            a(href="/admin/goods" class="btn btn-primary site-btn mx-1 active-link") Товары
+        table.table
+            tr
+                th №
+                th Название
+                th Описание
+                th Цена
+            each val in goods
+                tr
+                    td #{val['id']}
+                    td #{val['name']}
+                    td #{val['description']}
+                    td #{val['cost'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} ₽
+    include footer
+

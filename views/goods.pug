@@ -1,0 +1,26 @@
+include head
+    include header
+
+div(class='container py-5')
+    div(class="text-small")
+        a(href=`category?id=${category[0].id}`) #{category[0].name}
+        i(class="fa fa-long-arrow-right ml-2 mr-2" aria-hidden="true")
+        span #{goods.name}
+    div(class='row')
+        div(class='col col-lg-12 col-sm-12 col-12 py-2')
+            h1(class='panel-title py-4') #{goods.name}
+        div(class='col col-lg-4 col-sm-12 col-12 text-center py-2')
+            img(
+                src=`images/${goods.image}`
+                class='img-fluid good-big-image max-size'
+            )
+        div(class='col col-lg-5 col-sm-12 col-12 py-2')
+            p #{goods.description}
+        div(class='col col-lg-3 col-sm-12 col-12 text-center')
+            h3(class='success') #{goods.cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')}
+            button(
+                class='btn btn-primary add-to-cart site-btn'
+                data-goods_id=goods.id
+            ) В корзину
+    div(class="reviews py-3 mt-5")
+include footer

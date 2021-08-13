@@ -1,0 +1,42 @@
+include head
+
+div(class='wrap')
+    div(class='content')
+        header(class='site-header')
+            include header_order
+
+        div(class="container text-center")
+            h3.py-3 Управление
+            div(class="d-grid gap-2 mb-5")
+                a(href="/admin" class="btn btn-primary site-btn mx-1 active-link") Ваши данные
+                a(href="/admin/orders" class="btn btn-primary site-btn mx-1") Заказы
+                a(href="/admin/goods" class="btn btn-primary site-btn mx-1") Товары
+            div(class='mw-60 mx-auto')
+                if messageError
+                    div(class='alert alert-danger col-sm-12') #{messageError}
+                if messageSuccess
+                    div(class='alert alert-success col-sm-12') #{messageSuccess}
+                form(action="/signup", method="POST" class='needs-validation form-login')
+                    div(class='col-12 mb-3')
+                        label(for='firstName' class="form-label") Имя
+                        input(
+                            type='text',
+                            id='firstName',
+                            placeholder='Enter your first name',
+                            class='form-control'
+                            value=`${auth.first_name}`,
+                            name="firstName"
+                        )
+                    div(class='col-12 mb-3')
+                        label(for='lastName' class="form-label") Фамилия
+                        input(
+                            type='text',
+                            id='lastName',
+                            placeholder='Enter your last name',
+                            class='form-control'
+                            value=`${auth.last_name}`,
+                            name="lastName"
+                        )
+                    div(class='col-12 text-center py-3')
+                        button(class='btn btn-primary site-btn', type='submit') Изменить
+    include footer

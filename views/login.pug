@@ -1,0 +1,31 @@
+include head
+    div(class='container pt-5')
+        h3(class='py-3 text-center') Вход
+        form(action="/login", method="POST" class='needs-validation form-login mw-60 mx-auto')
+            div(class='col-12 mb-3')
+                if message
+                    div(class='alert alert-danger col-sm-12') #{message}
+                label(for='login' class="form-label") Логин
+                input(
+                    type='text',
+                    id='login',
+                    placeholder='Введите имя',
+                    class='form-control'
+                    value='admin',
+                    name="login"
+                )
+            div(class='col-12  mb-3')
+                label(for='password' class="form-label") Пароль
+                input(
+                    type='text',
+                    id='password',
+                    placeholder='Введите пароль',
+                    class='form-control'
+                    value='123',
+                    name="password"
+                )
+            div(class='col-12 text-center py-3')
+                button(class='btn btn-primary site-btn', type='submit') Войти
+            span Еще нет аккаунта?
+                a(class='site-link ml-1' href='/signup') Создать
+    include footer

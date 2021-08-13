@@ -1,0 +1,53 @@
+include head
+    div(class='container pt-5')
+        h3(class='py-3 text-center') Регистрация
+        form(action="/signup", method="POST" class='needs-validation form-login mw-60 mx-auto')
+            div(class='col-12 mb-3')
+                if messageError
+                    div(class='alert alert-danger col-sm-12') #{messageError}
+                if messageSuccess
+                    div(class='alert alert-success col-sm-12') #{messageSuccess}
+                label(for='firstName' class="form-label") Имя
+                input(
+                    type='text',
+                    id='firstName',
+                    placeholder='Введите имя',
+                    class='form-control'
+                    value='Гораций',
+                    name="firstName"
+                )
+            div(class='col-12 mb-3')
+                label(for='lastName' class="form-label") Фамилия
+                input(
+                    type='text',
+                    id='lastName',
+                    placeholder='Введите фамилию',
+                    class='form-control'
+                    value='Слизнрот',
+                    name="lastName"
+                )
+            div(class='col-12 mb-3')
+                label(for='login' class="form-label") Логин
+                input(
+                    type='text',
+                    id='login',
+                    placeholder='Введите логин',
+                    class='form-control'
+                    value='admin',
+                    name="login"
+                )
+            div(class='col-12 mb-3')
+                label(for='password' class="form-label") Пароль
+                input(
+                    type='text',
+                    id='password',
+                    placeholder='Введите пароль',
+                    class='form-control'
+                    value='123',
+                    name="password"
+                )
+            div(class='col-12 text-center py-3')
+                button(class='btn btn-primary site-btn', type='submit') Войти
+            span Уже есть аккаунт?
+                a(class='site-link ml-1' href='/login') Войдите
+    include footer

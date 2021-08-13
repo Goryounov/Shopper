@@ -1,0 +1,24 @@
+{
+  "name": "Shopper",
+  "version": "1.0.0",
+  "description": "A simple internet shop",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Goryounov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie": "^0.4.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "mustard-ui": "^1.0.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.6.2",
+    "nodemon": "^2.0.9",
+    "pug": "^3.0.2",
+    "sequelize": "^6.6.5"
+  }
+}
